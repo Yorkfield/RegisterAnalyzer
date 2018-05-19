@@ -58,12 +58,12 @@
   </action>
   <action name="actionUndo">
    <property name="text">
-    <string>Undo</string>
+    <string>Save</string>
    </property>
   </action>
   <action name="actionRedo">
    <property name="text">
-    <string>Redo</string>
+    <string>Load</string>
    </property>
   </action>
   <action name="actionClone_Tab">

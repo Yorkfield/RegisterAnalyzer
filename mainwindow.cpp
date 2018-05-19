@@ -24,14 +24,14 @@ MainWindow::MainWindow(QWidget *parent) :
         ui->actionClone_Tab->setIcon(style()->standardIcon(QStyle::SP_CommandLink));
 
         ui->actionUndo->setIcon(
-                   style()->standardIcon(QStyle::SP_ArrowLeft));
+                   style()->standardIcon(QStyle::SP_DialogSaveButton));
 
         ui->actionRedo->setIcon(
-                   style()->standardIcon(QStyle::SP_ArrowRight));
+                   style()->standardIcon(QStyle::SP_DialogOpenButton));
 
         // undo-redo function not yet implemented
-        ui->toolBar->removeAction(ui->actionUndo);
-        ui->toolBar->removeAction(ui->actionRedo);
+        //ui->toolBar->removeAction(ui->actionUndo);
+        //ui->toolBar->removeAction(ui->actionRedo);
     }
 
     //Add spacing to toolbar
@@ -136,6 +136,8 @@ void MainWindow::closeTab(int aTabNr)
     delete currWidget;
 
 }
+
+
 
 void MainWindow::changeRegName(const QString& aText)
 {
