@@ -90,7 +90,7 @@ RegisterFieldModel::~RegisterFieldModel()
 
  bool RegisterFieldModel::setData(const QModelIndex & aIndex, const QVariant & value, int role)
  {
-      qDebug()<<__PRETTY_FUNCTION__;
+      qDebug()<<__FUNCTION__;
 
      int row = aIndex.row();
      int column = aIndex.column();
@@ -205,7 +205,7 @@ RegisterFieldModel::~RegisterFieldModel()
  {
      m_content = aContent;
 
-     qDebug()<<__PRETTY_FUNCTION__;
+     qDebug()<<__FUNCTION__;
      qDebug()<<"    "<<aContent;
 
      for(int iFields=0; iFields<m_bitFields.size(); iFields++)
