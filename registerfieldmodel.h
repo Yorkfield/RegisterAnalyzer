@@ -12,6 +12,7 @@
 #include <tuple>
 #include "bitconverter.h"
 #include "coloring.h"
+#include <QSettings>
 
 struct field_t
 {

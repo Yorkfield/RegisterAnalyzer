@@ -21,6 +21,10 @@ namespace NsConverter
             }
 
             ret.prepend( nippleToHex(currNipple) );
+            if ((iBit + 4) % 32 == 0)
+            {
+                    ret.prepend(" ");
+                    }
 
             iBit += currWidth;
         }

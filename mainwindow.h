@@ -27,6 +27,8 @@ public slots:
     void closeTab(int aTabNr);
     void changeRegName(const QString& aText);
     void cloneTab();
+    void load();
+    void save();
 };
 
 #endif // MAINWINDOW_H

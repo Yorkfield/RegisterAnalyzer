@@ -12,6 +12,8 @@ MainWindow::MainWindow(QWidget *parent) :
 
     connect(ui->actionNewTab, SIGNAL(triggered()), this, SLOT(addNewTab()));
     connect(ui->actionClone_Tab, SIGNAL(triggered()), SLOT(cloneTab()));
+    connect(ui->actionSave, SIGNAL(triggered()), this, SLOT(save()));
+    connect(ui->actionLoad, SIGNAL(triggered()), SLOT(load()));
     connect(ui->tab_registers, SIGNAL(tabCloseRequested(int)), this, SLOT(closeTab(int)));
 
     addNewTab();
@@ -23,15 +25,15 @@ MainWindow::MainWindow(QWidget *parent) :
 
         ui->actionClone_Tab->setIcon(style()->standardIcon(QStyle::SP_CommandLink));
 
-        ui->actionUndo->setIcon(
+        ui->actionSave->setIcon(
                    style()->standardIcon(QStyle::SP_DialogSaveButton));
 
-        ui->actionRedo->setIcon(
+        ui->actionLoad->setIcon(
                    style()->standardIcon(QStyle::SP_DialogOpenButton));
 
         // undo-redo function not yet implemented
-        //ui->toolBar->removeAction(ui->actionUndo);
-        //ui->toolBar->removeAction(ui->actionRedo);
+        //ui->toolBar->removeAction(ui->actionSave);
+        //ui->toolBar->removeAction(ui->actionLoad);
     }
 
     //Add spacing to toolbar
@@ -169,5 +171,17 @@ void MainWindow::cloneTab()
     getCurrent()->getModel()->import(*orig);
 }
 
+void MainWindow::load()
+{
+qDebug()<<"MainWindow::load()";
+}
+void MainWindow::save()
+{
 
 
+qDebug()<<"MainWindow::save()";
+QSettings settings("D:/registeranalyze.ini", QSettings::IniFormat);
+settings.setValue("editor/wrapMargin", 100);
+int currIndex = ui->tab_registers->currentIndex();
+ui->tab_registers->setTabText(currIndex, "100");
+}
